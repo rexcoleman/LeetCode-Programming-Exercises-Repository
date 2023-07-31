@@ -121,6 +121,13 @@ class LinkedList:
             before = temp
             temp = after
 
+    ## WRITE REVERSE METHOD HERE ##
+    #                             #
+    #                             #
+    #                             #
+    #                             #
+    ###############################
+
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
