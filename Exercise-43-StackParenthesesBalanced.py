@@ -29,8 +29,6 @@ class Stack:
 
 def is_balanced_parentheses(parentheses):
     stack = Stack()
-    print(parentheses)
-    print(type(parentheses))
     for p in parentheses:
         if p == '(':
             stack.push(p)
