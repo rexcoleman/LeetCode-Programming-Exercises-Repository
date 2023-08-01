@@ -44,14 +44,6 @@ class LinkedList:
             self.tail = None
         return temp
 
-    ### WRITE POP METHOD HERE ###
-    #                           #
-    #                           #
-    #                           #
-    #                           #
-    #############################
-
-
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 
