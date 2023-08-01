@@ -36,9 +36,6 @@ class Stack:
         return temp
 
 
-
-
-
 my_stack = Stack(4)
 my_stack.push(3)
 my_stack.push(2)
