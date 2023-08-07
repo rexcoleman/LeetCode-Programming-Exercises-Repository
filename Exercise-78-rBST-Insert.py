@@ -16,6 +16,7 @@ class BinarySearchTree:
             current_node.left = self.__r_insert(current_node.left, value)
         if value > current_node.value:
             current_node.right = self.__r_insert(current_node.right, value)
+        return current_node
 
 
 
