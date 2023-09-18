@@ -72,7 +72,7 @@ class DijkstraAlgorithm:
     @staticmethod
     def get_shortest_path(vertex):
 
-        print('Shortest path to vertex is: %s' % str(vertex.min_distance))
+        print("Shortest path to vertex %s is: %s" % (vertex.name, str(vertex.min_distance)))
 
         actual_vertex = vertex
 
