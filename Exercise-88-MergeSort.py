@@ -25,8 +25,11 @@ def merge_sort(my_list):
     if len(my_list) == 1:
         return my_list
     mid_index = int(len(my_list) / 2)
+    print(mid_index)
     left = merge_sort(my_list[:mid_index])
+    print(f"left {left}")
     right = merge_sort(my_list[mid_index:])
+    print(f"right {right}")
     return merge(left, right)
 
 
