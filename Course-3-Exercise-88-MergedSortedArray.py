@@ -15,6 +15,7 @@ class Solution(object):
 
         # we want to merge nums2 into nums 1.  when nums 2 is empty
         # then the loop ends
+        # O(n+m) running time complexity
         while j >= 0:
             # only apply this condition when we have values remaining to compare in nums1
             # if the item in nums1 is greater then move to the end and decrement i by 1
