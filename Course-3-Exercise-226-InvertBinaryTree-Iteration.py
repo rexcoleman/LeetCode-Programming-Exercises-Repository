@@ -1,6 +1,5 @@
 from collections import deque
 
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -23,6 +22,7 @@ class BinaryTree:
         queue = deque([self.root])
         i = 1
 
+        # Iterate through list to add nodes to tree
         while i < len(values):
             current = queue.popleft()
 
@@ -42,8 +42,9 @@ class BinaryTree:
     def print_tree(self):
         if not self.root:
             return
-
+        # Use deque to keep track of nodes
         queue = deque([self.root])
+        # Breadth first search iteration
         while queue:
             current = queue.popleft()
             print(current.val)
@@ -60,10 +61,14 @@ class Solution(object):
         """
         if not root:
             return None
-        right = self.invert_tree(root.right)
-        left = self.invert_tree(root.left)
-        root.left = right
-        root.right = left
+        queue = deque([root])
+        while queue:
+            current = queue.popleft()
+            current.left, current.right = current.right, current.left
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
         return root
 
     def tree_to_list(self, root):
@@ -120,3 +125,7 @@ if __name__ == '__main__':
     print(f"Outcome 1: {output_1}")
     print(f"Outcome 2: {output_2}")
     print(f"Outcome 3: {output_3}")
+
+
+
+
