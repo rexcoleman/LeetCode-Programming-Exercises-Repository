@@ -5,6 +5,8 @@ class Solution:
     def reverseBits(self, n: int) -> int:
         ret, power = 0, 31
         while n:
+            bin_n = bin(n)[2:]
+            print(bin_n)
             ret += (n & 1) << power
             n = n >> 1
             power -= 1
