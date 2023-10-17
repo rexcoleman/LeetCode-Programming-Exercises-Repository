@@ -1,0 +1,30 @@
+from typing import List
+
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        # Speed up the rotation
+        k %= len(nums)
+        for i in range(k):
+            previous = nums[-1]
+            for j in range(len(nums)):
+                nums[j], previous = previous, nums[j]
+
+
+
+if __name__ == '__main__':
+
+    # Inputs
+    nums1 = [1, 2, 3, 4, 5, 6, 7]
+    k1 = 3
+    nums2 = [-1, -100, 3, 99]
+    k2 = 2
+
+    test_1 = Solution()
+    test_2 = Solution()
+
+    t_1 = test_1.rotate(nums1, k1)
+    t_2 = test_2.rotate(nums2, k2)
+
+    print(f"Test 1: {nums1}")
+    print(f"Test 2: {nums2}")
