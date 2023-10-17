@@ -28,6 +28,7 @@ class Solution(object):
         while i < len(s):
             # conditional for two character roman numerals
             if i < len(s) -1 and s[i:i+2] in values:
+                print(s[i:i+2])
                 total += values[s[i:i+2]]
                 i += 2
             else:
