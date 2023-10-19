@@ -30,8 +30,6 @@ if __name__ == '__main__':
     s2 = "  hello world  "
     s3 = "a good   example"
 
-    # Run Tests
-
     # Run tests
     solution_1 = Solution()
     solution_2 = Solution()
