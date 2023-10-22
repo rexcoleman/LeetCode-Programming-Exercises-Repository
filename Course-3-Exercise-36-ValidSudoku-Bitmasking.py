@@ -5,35 +5,36 @@ class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         N = 9
 
-        # Use hash sets to record the status
-        rows = [set() for _ in range(N)]
-        columns = [set() for _ in range(N)]
-        boxes = [set() for _ in range(N)]
+        # Use binary number to check for previous occurrence
+        rows = [0] * N
+        columns = [0] * N
+        boxes = [0] * N
 
         for r in range(N):
             for c in range(N):
-                val = board[r][c]
-                # Check if position is filled with a number
-                if val == '.':
+                # Check if the position is filled with a number
+                if board[r][c] == ".":
                     continue
 
+                position = int(board[r][c]) - 1
+
                 # Check the row
-                if val in rows[r]:
+                if rows[r] & (1 << position):
                     return False
-                rows[r].add(val)
+                rows[r] |= (1 << position)
 
                 # Check the column
-                if val in columns[c]:
+                if columns[c] & (1 << position):
                     return False
-                columns[c].add(val)
+                columns[c] |= (1 << position)
 
                 # Check the box
                 box_index = (r // 3) * 3 + (c // 3)
-                if val in boxes[box_index]:
+                if boxes[box_index] & (1 << position):
                     return False
-                boxes[box_index].add(val)
-        return True
+                boxes[box_index] |= (1 << position)
 
+        return True
 
 
 if __name__ == '__main__':
