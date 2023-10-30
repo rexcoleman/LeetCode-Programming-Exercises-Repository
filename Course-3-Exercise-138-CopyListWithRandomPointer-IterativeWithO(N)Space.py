@@ -72,18 +72,18 @@ def createLinkedList(nested_list):
 
 
 def lindedListToNestedList(head):
-    index_map_1 = {}
+    index_map = {}
     output = []
     i = 0
     node = head
     while node:
-        index_map_1[node] = i
+        index_map[node] = i
         i += 1
         node = node.next
     i = 0
     node = head
     while node:
-        index = None if node.random is None else index_map_1[node.random]
+        index = None if node.random is None else index_map[node.random]
         output.append([node.val, index])
         i += 1
         node = node.next
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     new_head_3 = solution_3.copyRandomList(head_3)
 
 
-    # Create a list to output a nested list from the cloned linked list
+    # Create an output nested list from the cloned linked list
     output_1 = lindedListToNestedList(new_head_1)
     output_2 = lindedListToNestedList(new_head_2)
     output_3 = lindedListToNestedList(new_head_3)
