@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List, Optional
 
 
@@ -37,6 +38,24 @@ class Solution:
 
         return array_to_tree(0, len(preorder) - 1)
 
+def tree_to_list(root):
+    output = []
+    if not root:
+        return None
+    # Use a deque to keep track of the tree nodes (BFS)
+    queue = deque([root])
+    while queue:
+        current = queue.popleft()
+        if current:
+            output.append(current.val)
+            queue.append(current.left)
+            queue.append(current.right)
+        else:
+            output.append(None)
+        # Remove trailing None values
+    while output and output[-1] == None:
+        output.pop()
+    return output
 
 
 if __name__ == '__main__':
@@ -54,6 +73,12 @@ if __name__ == '__main__':
 
     test_1 = solution_1.buildTree(preorder_1, inorder_1)
     test_2 = solution_1.buildTree(preorder_2, inorder_2)
+
+    output_1 = tree_to_list(test_1)
+    output_2 = tree_to_list(test_2)
+
+    print(f"\nOutput 1: {output_1}: \nExpected Output: [3,9,20,None,None,15,7]")
+    print(f"\nOutput 2: {output_2}: \nExpected Output: [-1]")
 
 
 
