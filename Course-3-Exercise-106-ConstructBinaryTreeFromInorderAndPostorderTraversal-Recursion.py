@@ -17,7 +17,7 @@ class Solution:
             if left > right:
                 return None
             # Select the postorder_index element as the root and increment it
-            root_value = postorder[postorder_index]
+            root_value = postorder.pop()
             root = TreeNode(root_value)
 
             postorder_index -= 1
@@ -31,9 +31,7 @@ class Solution:
 
         postorder_index = len(postorder) - 1
         # Build a hashmap to store value -> its index relations
-        inorder_index_map = {}
-        for index, value in enumerate(inorder):
-            inorder_index_map[value] = index
+        inorder_index_map = {value: index for index, value in enumerate(inorder)}
 
         return array_to_tree(0, len(postorder) - 1)
 
