@@ -87,7 +87,7 @@ class Solution:
 
 if __name__ == '__main__':
 
-    # Inputs
+    # Inputs and Expected Outputs
     root_1 = [1, 2, 5, 3, 4, None, 6]
     expected_output_1 = [1,None,2,None,3,None,4,None,5,None,6]
     root_2 = []
@@ -128,7 +128,3 @@ if __name__ == '__main__':
     print(f"\nFlattened Tree 2: {result_2}\nExpected Result: {expected_output_2}")
     print(f"\nFlattened Tree 3: {result_3}\nExpected Result: {expected_output_3}")
 
-
-
-
-    # print(test_1.val)
