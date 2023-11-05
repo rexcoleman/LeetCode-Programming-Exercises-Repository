@@ -39,11 +39,11 @@ class BinaryTree:
 
 
     def binaryTreeToList(self, root):
-        if not root:
+        if not self.root:
             return []
         output = []
         # Use deque to track nodes in a breadth first manner to print: root -> left -> right
-        queue = deque([root])
+        queue = deque([self.root])
         while queue:
             current = queue.popleft()
             if current:
@@ -127,8 +127,8 @@ if __name__ == '__main__':
 
     # Print to test binary trees
     print_output_1 = binary_tree_1.binaryTreeToList(bt_1)
-    print_output_2 = binary_tree_1.binaryTreeToList(bt_2)
-    print_output_3 = binary_tree_1.binaryTreeToList(bt_3)
+    print_output_2 = binary_tree_2.binaryTreeToList(bt_2)
+    print_output_3 = binary_tree_3.binaryTreeToList(bt_3)
     print(f"\nPrint Test 1: {print_output_1} \nExpected Result: {root_1}")
     print(f"\nPrint Test 2: {print_output_2} \nExpected Result: {root_2}")
     print(f"\nPrint Test 3: {print_output_3} \nExpected Result: {root_3}")
