@@ -63,9 +63,6 @@ class BSTIterator:
             self.stack.append(root)
             root = root.left
 
-
-    def _inorder(self, root):
-        pass
     def next (self) -> int:
         # Node at the top of the stack is the next smallest element
         topmost_node = self.stack.pop()
