@@ -1,0 +1,102 @@
+from collections import deque
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = None
+        self.right = None
+
+
+class BinaryTree:
+
+    def __init__(self):
+        self.root = None
+
+    def listToBinaryTree(self, values):
+        if not values:
+            return None
+        self.root = TreeNode(values[0])
+        queue = deque([self.root])
+        i = 1
+        while i < len(values):
+            current = queue.popleft()
+            if i < len(values) and values[i] is not None:
+                current.left = TreeNode(values[i])
+                queue.append(current.left)
+            i += 1
+            if i < len(values) and values[i] is not None:
+                current.right = TreeNode(values[i])
+                queue.append(current.right)
+            i += 1
+        return self.root
+
+    def binaryTreeToList(self, queue):
+        output = []
+        if not self.root:
+            return output
+        queue = deque([self.root])
+        while queue:
+            current = queue.popleft()
+            if current is not None:
+                output.append(current.val)
+                queue.append(current.left)
+                queue.append(current.right)
+            else:
+                output.append(None)
+        # Remove trailing None values
+        while output and output[-1] == None:
+            output.pop()
+        return output
+
+
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        stack = []
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            k -= 1
+            if not k:
+                return root.val
+            root = root.right
+
+
+
+
+if __name__ == '__main__':
+
+    # Inputs and Expected Outputs
+    root_1 = [3, 1, 4, None, 2]
+    k_1 = 1
+    expected_output_1 = 1
+    root_2 = [5, 3, 6, 2, 4, None, None, 1]
+    k_2 = 3
+    expected_output_2 = 3
+
+    # Construct Binary Trees
+    binary_tree_1 = BinaryTree()
+    binary_tree_2 = BinaryTree()
+    bt_1 = binary_tree_1.listToBinaryTree(root_1)
+    bt_2 = binary_tree_2.listToBinaryTree(root_2)
+
+    # Print to Test Binary Tree Construction
+    tree_1_print = binary_tree_1.binaryTreeToList(bt_1)
+    tree_2_print = binary_tree_2.binaryTreeToList(bt_2)
+    print(f"\nTree 1 Print Test: {tree_1_print} \nExpected Result: {root_1}")
+    print(f"\nTree 2 Print Test: {tree_2_print} \nExpected Result: {root_2}")
+
+
+    # Run Tests
+    solution_1 = Solution()
+    solution_2 = Solution()
+    test_1 = solution_1.kthSmallest(bt_1, k_1)
+    test_2 = solution_2.kthSmallest(bt_2, k_2)
+
+    # Print Results
+    print(f"\nTest 1 Result: {test_1} \nExpected Result: {expected_output_1}")
+    print(f"\nTest 2 Result: {test_2} \nExpected Result: {expected_output_2}")
+
