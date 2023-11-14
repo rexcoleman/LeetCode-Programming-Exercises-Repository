@@ -6,7 +6,7 @@ class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         node_group_info = {}
 
-        def find(node_id):
+        def findLeaderAndCumulativeMulitiplier(node_id):
             if node_id not in node_group_info:
                 node_group_info[node_id] = (node_id, 1)
             group_id, node_multiplier = node_group_info[node_id]
@@ -15,14 +15,14 @@ class Solution:
 
             if group_id != node_id:
                 # found inconsistency, trigger chain update
-                new_group_id, group_positional_multiplier =  find(group_id)
+                new_group_id, group_positional_multiplier =  findLeaderAndCumulativeMulitiplier(group_id)
                 node_group_info[node_id] = (new_group_id, node_multiplier * group_positional_multiplier)
 
             return node_group_info[node_id]
 
         def union(dividend, divisor, value):
-            dividend_group_id, dividend_multiplier = find(dividend)
-            divisor_group_id, divisor_multiplier = find(divisor)
+            dividend_group_id, dividend_multiplier = findLeaderAndCumulativeMulitiplier(dividend)
+            divisor_group_id, divisor_multiplier = findLeaderAndCumulativeMulitiplier(divisor)
             if dividend_group_id != divisor_group_id:
                 # merge the two groups to gether,
                 # by attaching the dividend group to the one of divisor
@@ -33,14 +33,14 @@ class Solution:
             union(dividend, divisor, value)
 
         results = []
-        # Step 2). run the evaluation, with "lazy" updates in find() function
+        # Step 2). run the evaluation, with "lazy" updates in findLeaderAndCumulativeMulitiplier() function
         for (dividend, divisor) in queries:
             if dividend not in node_group_info or divisor not in node_group_info:
                 # case 1). at least one variable did not appear before
                 results.append(-1.0)
             else:
-                dividend_group_id, dividend_multiplier = find(dividend)
-                divisor_group_id, divisor_multiplier = find(divisor)
+                dividend_group_id, dividend_multiplier = findLeaderAndCumulativeMulitiplier(dividend)
+                divisor_group_id, divisor_multiplier = findLeaderAndCumulativeMulitiplier(divisor)
                 if dividend_group_id != divisor_group_id:
                     # case 2). the variables do not belong to the same chain/group
                     results.append(-1.0)
