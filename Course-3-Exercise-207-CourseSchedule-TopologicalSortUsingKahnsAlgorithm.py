@@ -11,6 +11,7 @@ class Solution:
             indegree[prerequisite[0]] += 1
 
         queue = deque()
+        # Start with nodes that have zero indegrees
         for i in range(numCourses):
             if indegree[i] == 0:
                 queue.append(i)
@@ -20,6 +21,8 @@ class Solution:
             node = queue.popleft()
             nodesVisited += 1
 
+            # We use this for loop to reduce indegrees and look for nodes
+            # with zero indegrees to add to queue
             for neighbor in adj[node]:
                 indegree[neighbor] -= 1
                 if indegree[neighbor] == 0:
