@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     # Inputs and Expected Outputs
     numCourses_1 = 2
-    prerequisites_1 = [[1, 0], [0, 1]]
+    prerequisites_1 = [[1, 0]]
     expected_output_1 = [0, 1]
     numCourses_2 = 4
     prerequisites_2 = [[1, 0], [2, 0], [3, 1], [3, 2]]
