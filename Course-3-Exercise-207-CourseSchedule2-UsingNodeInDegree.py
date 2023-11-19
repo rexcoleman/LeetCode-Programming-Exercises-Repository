@@ -19,7 +19,7 @@ class Solution(object):
 
         topological_sorted_order = []
 
-        # Until there are nodes in the Q
+        # Until there are no nodes in the Q
         while zero_indegree_queue:
             # Pop one node with 0 in-degree
             vertex = zero_indegree_queue.popleft()
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     # Inputs and Expected Outputs
     numCourses_1 = 2
-    prerequisites_1 = [[1, 0]]
+    prerequisites_1 = [[1, 0], [0, 1]]
     expected_output_1 = [0, 1]
     numCourses_2 = 4
     prerequisites_2 = [[1, 0], [2, 0], [3, 1], [3, 2]]
