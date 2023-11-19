@@ -7,7 +7,11 @@ class Solution:
         adj = [[] for _ in range(numCourses)]
 
         for prerequisite in prerequisites:
+            # An adjacency list for this directed graph uses the index as the prerequisite course
+            # and the value as the course that relies on the prerequisite course
             adj[prerequisite[1]].append(prerequisite[0])
+            # The indegree states how many remaining prerequisites are required (value)
+            # before taking the course (index)
             indegree[prerequisite[0]] += 1
 
         queue = deque()
