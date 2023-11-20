@@ -5,7 +5,7 @@ class Solution:
     def snakesAndLadders(self, board: List[List[int]]) -> int:
         n = len(board)
 
-        # cells provides the coordinates in the matix for each move of the dice roll (curr + dice roll)
+        # cells provides the coordinates in the matrix for each move of the dice roll (curr + dice roll)
         # we have 37 values because the graph starts at node 1
         cells = [None] * (n**2 + 1)
         # label is used to advance the index in cells with each iteration
@@ -15,11 +15,11 @@ class Solution:
             for column in columns:
                 cells[label] = (row, column)
                 label += 1
-            # the revers list method is used to manage the boustrophedon style of the graph
+            # the reverse list method is used to manage the boustrophedon style of the graph
             # (left to right then right to left)
             columns.reverse()
-        # Min_roll_to_reach_node keeps track of the the minimun number of rolls required to reach each node
-        # and it updates each vale via breadth first search using queue
+        # Min_roll_to_reach_node keeps track of the minimum number of rolls required to reach each node
+        # and it updates each value via breadth first search using queue
         # we have 37 values because the graph starts at node 1
         min_roll_to_reach_node = [-1] * (n * n + 1)
         queue = deque([1])
