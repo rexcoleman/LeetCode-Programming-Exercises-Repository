@@ -8,7 +8,7 @@ class Solution:
 
         def backtrack(remain, comb, start):
             if remain == 0:
-                # make a deep copy of the current combination
+                # make a shallow copy of the current combination
                 results.append(list(comb))
                 return
             elif remain < 0:
