@@ -13,6 +13,11 @@ class Solution:
         # F(0) = "", F(1) = ()
         # Look at how the "left_count" argument translates to F(0, 1, 2, 3)
         # as left_count increments up
+        # If left_count > 0 in left_string then we recursively break down left_string
+        # If left_count > 0 in right_string then we recursively break down right_string
+        # Why 3 nested for loops? First loop is for left_count.  That is explaind above.
+        # The 2'nd and 3'rd for loops are for left_string and right_string.  If left_count > 0
+        # Then we recursively break them down (divide and conquer)
         for left_count in range(n):
             for left_string in self.generateParenthesis(left_count):
                 for right_string in self.generateParenthesis(n - 1 - left_count):
