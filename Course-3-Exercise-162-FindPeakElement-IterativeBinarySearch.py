@@ -5,6 +5,8 @@ class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         left = 0
         right = len(nums) - 1
+        # This pattern accounts for the case whe len(nums) = 2
+        # It is equivalent to left <= right
         while left < right - 1:
             mid = (left + right) // 2
             if nums[mid] > nums[mid + 1] and nums[mid] > nums[mid - 1]:
