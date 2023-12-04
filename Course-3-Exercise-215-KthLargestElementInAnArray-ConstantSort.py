@@ -16,6 +16,8 @@ class Solution:
         for num in range(len(count) -1, -1, -1):
             remain -= count[num]
             if remain <= 0:
+                # Note the + min_value factor.  This reverses the subtraction of min_value when we
+                # iterated through nums to create the count array
                 return num + min_value
 
         return -1
