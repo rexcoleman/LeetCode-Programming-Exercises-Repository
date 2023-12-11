@@ -3,6 +3,9 @@ from typing import List
 
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
+        if len(grid) <= 0 or grid is None:
+            return 0
+
         m, n = len(grid), len(grid[0])
 
         for i in range(1, m):
