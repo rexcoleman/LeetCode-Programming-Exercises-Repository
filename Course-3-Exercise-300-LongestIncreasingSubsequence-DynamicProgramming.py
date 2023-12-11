@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Inputs and Expected Outputs
     nums_1 = [10, 9, 2, 5, 3, 7, 101, 18]
     expected_output_1 = 4
-    nums_2 = [0, 1, 0, 3, 2, 3]
+    nums_2 = [0, 1, 0, 3, 2, 3, 2]
     expected_output_2 = 4
     nums_3 = [7, 7, 7, 7, 7, 7, 7]
     expected_output_3 = 1
