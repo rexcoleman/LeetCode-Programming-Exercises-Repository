@@ -8,16 +8,16 @@ class Solution:
 
         m, n = len(matrix), len(matrix[0])
         result = 0
-        dp = [[0] * n for _ in range(2)] # 2-rowed dp array
+        dp = [0] * n  # 1D array
         for i in range(m):
+            prev = 0  # stores dp[i-1][j-1]
             for j in range(n):
-                # i%2 (or i&1) alternates between dp[0] and dp[1]
-                dp[i % 2][j] = 0 if matrix[i][j] == '0' else \
-                    1 + min(dp[i % 2][j - 1] if j > 0 else 0,
-                        dp[1 - i % 2][j - 1] if j > 0 else 0,
-                        dp[1 - i % 2][j]
-                    )
-                result = dp[i%2][j] if dp[i%2][j] > result else result
+                dp[j], prev = 0 if matrix[i][j] == '0' else \
+                    (min(dp[j],  # dp[j] -> dp[i-1][j]
+                         dp[j - 1] if j > 0 else 0,  # dp[j-1] -> dp[i][j-1]
+                         prev)  # prev -> dp[i-1][j-1]
+                     + 1), dp[j]
+                result = dp[j] if dp[j] > result else result
         return result * result
 
 
