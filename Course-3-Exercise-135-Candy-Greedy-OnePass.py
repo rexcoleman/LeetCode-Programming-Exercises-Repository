@@ -16,7 +16,6 @@ class Solution:
                 ret += 1
             else:
                 up, down = 0, down + 1
-                a = int(peak >= down)
                 ret += 1 + down - int(peak >= down)
 
         return ret
@@ -26,8 +25,8 @@ if __name__ == '__main__':
     # Inputs and Expected Outputs
     ratings_1 = [1, 0, 2]
     expected_output_1 = 5
-    ratings_2 = [1, 2, 3, 3, 2, 1]
-    expected_output_2 = 12
+    ratings_2 = [1, 2, 3, 2, 3, 2, 1]
+    expected_output_2 = 13
 
     # Run Tests
     solution_1 = Solution()
