@@ -10,7 +10,8 @@ class Solution:
             node = trie
             for letter in word:
                 # retrieve the next node; If not found, create a empty node.
-                node = node.setdefault(letter, {})
+                node.setdefault(letter, {})
+                node = node[letter]
             # mark the existence of a word in trie node
             node[WORD_KEY] = word
 
@@ -64,7 +65,7 @@ if __name__ == '__main__':
         ["i", "h", "k", "r"],
         ["i", "f", "l", "v"]
     ]
-    words_1 = ["oath", "pea", "eat", "rain"]
+    words_1 = ["oath", "oats", "pea", "eat", "rain"]
     expected_output_1 = ["eat", "oath"]
     board_2 = [
         ["a", "b"],
