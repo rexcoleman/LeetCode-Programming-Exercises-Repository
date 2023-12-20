@@ -47,6 +47,10 @@ class Solution:
             # End of EXPLORATION, we restore the cell
             board[row][col] = letter
 
+            # Optimization: incrementally remove the matched leaf node in Trie.
+            if not currNode:
+                parent.pop(letter)
+
         for row in range(rowNum):
             for col in range(colNum):
                 # starting from each of the cells
