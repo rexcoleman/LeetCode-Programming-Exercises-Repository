@@ -11,6 +11,9 @@ class Solution:
             t1_cost = min(t1_cost, price)
             t1_profit = max(t1_profit, price - t1_cost)
             # reinvest the gained profit in the second transaction
+            # remember that the function output is t2_profit
+            # and t2_cost is sequentially after t1_profit
+            # so t1_profit must flow into t2_cost
             t2_cost = min(t2_cost, -t1_profit + price)
             t2_profit = max(t2_profit, price - t2_cost)
 
