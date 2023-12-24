@@ -18,6 +18,7 @@ class Solution:
             # curr_match_index tracks the algorithms progression across the t-string
             # if match_index == len(indices_list) this means that the curr_match_index
             # is greater than all the indices for the letter in the s-list
+            # This tool is used in binary_search implementations as it reduces the search space
             indices_list = letter_indices_table[letter]
             match_index = bisect.bisect_right(indices_list, curr_match_index)
             if match_index != len(indices_list):
