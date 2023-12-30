@@ -2,6 +2,9 @@ from collections import Counter
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
+        a = bin(n)[2:]
+        b = bin(n)
+        c = Counter(bin(n))
         count = Counter(bin(n)[2:])
         return count.get("1", 0)
 
