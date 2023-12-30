@@ -4,10 +4,12 @@ class Solution:
               1: 1,
               2: 1
               }
+        if n < 3:
+            return dp[n]
         for i in range(3, n + 1):
             dp[i] = dp[i-1] + dp[i-2] + dp[i-3]
-        if i == n:
-            return dp[i]
+            if i == n:
+                return dp[i]
 
 
 if __name__ == '__main__':
