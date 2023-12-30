@@ -6,9 +6,11 @@ class Solution:
               }
 
         def dp_recurse(n: int):
-            if n - 1 not in dp:
-                dp[n - 1] = dp_recurse(n - 1)
-            return dp[n -1] + dp[n - 2] + dp[n - 3]
+            if n in dp:
+                return dp[n]
+            dp[n] = dp_recurse(n - 1) + dp_recurse(n - 2) + dp_recurse(n - 3)
+
+            return dp[n]
 
         return dp_recurse(n)
 
@@ -19,6 +21,7 @@ if __name__ == '__main__':
     expected_output_1 = 4
     n_2 = 25
     expected_output_2 = 1389537
+    n_3 = 0
 
     # Run Tests
     solution_1 = Solution()
