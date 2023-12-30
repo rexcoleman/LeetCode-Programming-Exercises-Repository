@@ -3,48 +3,21 @@ from typing import List
 
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        slow, fast = 0, 0
-        length = len(chars)
-        if length == 1:
-            return 1
-        while fast < length:
-            if fast - slow == 10:
-                slow += 1
-                chars[slow] = 1
-                slow += 1
-                chars[slow] = 0
-                while fast < length:
-                    while chars[fast] == chars[slow + 1]:
-                        chars[slow] += 1
-                        fast += 1
-
-            if chars[fast] != chars[slow]:
-                diff = fast - slow
-                if diff == 1:
-                    slow += 1
-                else:
-                    chars[slow + 1] = diff
-                    slow += 2
-                    fast = slow
-            else:
-                fast += 1
-        diff = fast - slow
-        chars[slow + 1] = diff
-        slow += 2
-        while fast > slow:
-            chars.pop()
-            fast -= 1
-        return len(chars)
-
-
-
-
-
-
-
-
-
-
+        i = 0
+        res = 0
+        while i < len(chars):
+            group_length = 1
+            while i + group_length < len(chars) and chars[i + group_length] == chars[i]:
+                group_length += 1
+            chars[res] = chars[i]   # why?
+            res += 1
+            if group_length > 1:
+                str_repr = str(group_length)
+                a = list(str_repr)
+                chars[res:res+len(str_repr)] = list(str_repr)
+                res += len(str_repr)
+            i += group_length
+        return res
 
 
 if __name__ == '__main__':
