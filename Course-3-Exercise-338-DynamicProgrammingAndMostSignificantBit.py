@@ -26,7 +26,7 @@ if __name__ == '__main__':
     # Inputs and Expected Outputs
     n_1 = 2
     expected_output_1 = [0, 1, 1]
-    n_2 = 20
+    n_2 = 5
     expected_output_2 = [0, 1, 1, 2, 1, 2]
 
     # Run Tests
