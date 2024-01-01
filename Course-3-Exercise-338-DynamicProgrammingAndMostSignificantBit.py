@@ -9,6 +9,7 @@ class Solution:
         b = 1
 
         # [0, b) is calculated
+        # Think b represents the most significant bit and b is always 1 bit more than x
         while b <= n:
             # generate [b, 2b) or [b, n) from [0, b)
             while x < b and x + b <= n:
@@ -25,7 +26,7 @@ if __name__ == '__main__':
     # Inputs and Expected Outputs
     n_1 = 2
     expected_output_1 = [0, 1, 1]
-    n_2 = 5
+    n_2 = 20
     expected_output_2 = [0, 1, 1, 2, 1, 2]
 
     # Run Tests
