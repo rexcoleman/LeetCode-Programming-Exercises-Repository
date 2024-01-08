@@ -21,12 +21,6 @@ class Solution:
         return curString
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
     # Inputs and Expected Outputs:
     s_1 = "3[a]2[bc]"
