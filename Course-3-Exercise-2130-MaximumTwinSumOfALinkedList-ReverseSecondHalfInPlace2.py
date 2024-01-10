@@ -35,39 +35,33 @@ class LinkedList:
 
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        max_twin_sum = -math.inf
-        slow, fast = head, head.next
-        if not fast.next:
-            return slow.val + fast.val
-        while fast.next:
-            slow = slow.next
-            a = slow.val
+        slow, fast = head, head
+        maximumSum = 0
+
+        # Get middle of the linked list.
+        while fast and fast.next:
             fast = fast.next.next
-            b = fast.val
-        prev, curr, new_end = slow, slow.next, slow.next
-        c = prev.val
-        d = curr.val
-        prev.next = fast
-        while curr:
-            next_node = curr.next
-            e = next_node.val if next_node else None
-            curr.next = prev
-            prev = curr
-            f = prev.val
-            curr = next_node
-            g = curr.val if curr else None
-        new_end.next = None
-        slow = slow.next
-        q = slow.val if slow else None
-        temp = head
-        r = temp.val
-        while slow:
-            max_twin_sum = max(max_twin_sum, temp.val + slow.val)
-            temp = temp.next
-            s = temp.val
             slow = slow.next
-            t = slow.val if slow else None
-        return max_twin_sum
+
+        a = slow.val
+        b = fast.val if fast else None
+        # Reverse second half of the linked list.
+        # The end state is that the node in the 2'nd half points to None.
+        # Therefor start with prev == None
+        # The end result is two linked lists: one for each half.
+        # We could also connect them into one list but that is not necessary
+        curr, prev = slow, None
+        while curr:
+            curr.next, prev, curr = prev, curr, curr.next
+            c = prev.val
+            d = curr.val if curr else None
+
+        start = head
+        while prev:
+            maximumSum = max(maximumSum, start.val + prev.val)
+            prev = prev.next
+            start = start.next
+        return maximumSum
 
 
 if __name__ == '__main__':
