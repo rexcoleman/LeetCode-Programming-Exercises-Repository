@@ -30,6 +30,8 @@ class Solution:
                 if isConnected[r][c] == 1:
                     uf.union(r,c)
 
+        g = [uf.find(i) for i in range(s)]
+        print(g)
         return len(set([uf.find(i) for i in range(s)]))
 
 if __name__ == '__main__':
