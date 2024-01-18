@@ -4,14 +4,6 @@ from typing import List
 
 class Solution:
 
-    def dfs(self, adj_list, visited, from_node):
-        change = 0
-        visited[from_node] = True
-        for to_node in adj_list[from_node]:
-            if not visited[abs(to_node)]:
-                change += self.dfs(adj_list, visited, abs(to_node)) + (1 if to_node > 0 else 0)
-        return change
-
 
     def minReorder(self, n: int, connections: [List[List[int]]]) -> int:
 
