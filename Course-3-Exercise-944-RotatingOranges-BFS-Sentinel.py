@@ -64,16 +64,21 @@ if __name__ == '__main__':
     expected_output_2 = -1
     grid_3 = [[0, 2]]
     expected_output_3 = 0
+    grid_4 = [[0]]
+    expected_output_4 = 0
 
     # Run Tests
     solution_1 = Solution()
     solution_2 = Solution()
     solution_3 = Solution()
+    solution_4 = Solution()
     test_1 = solution_1.orangesRotting(grid_1)
     test_2 = solution_2.orangesRotting(grid_2)
     test_3 = solution_3.orangesRotting(grid_3)
+    test_4 = solution_4.orangesRotting(grid_4)
 
     # Print Results
     print(f"\nTest 1 Output: {test_1} \nExpected Output: {expected_output_1}")
     print(f"\nTest 2 Output: {test_2} \nExpected Output: {expected_output_2}")
     print(f"\nTest 3 Output: {test_3} \nExpected Output: {expected_output_3}")
+    print(f"\nTest 4 Output: {test_4} \nExpected Output: {expected_output_4}")
