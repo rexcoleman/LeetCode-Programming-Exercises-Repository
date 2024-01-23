@@ -23,12 +23,6 @@ class Solution:
         return -1
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
 
     # Inputs and Expected Outputs
