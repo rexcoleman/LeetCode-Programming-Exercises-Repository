@@ -26,12 +26,12 @@ class Solution:
             # (as the right potions are greater than the found potion).
 
             left, right = 0, m - 1
-            while left <= right:
+            while left < right:
                 mid = (left + right) // 2
                 if potions[mid] < minPotion:
                     left = mid + 1
                 else:
-                    right = mid - 1
+                    right = mid
 
             answer.append(m - left)
 
