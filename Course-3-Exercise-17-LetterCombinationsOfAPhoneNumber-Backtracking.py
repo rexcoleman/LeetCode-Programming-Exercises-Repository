@@ -32,7 +32,6 @@ class Solution:
         return combinations
 
 
-
 if __name__ == '__main__':
 
     # Inputs and Expected Outputs
