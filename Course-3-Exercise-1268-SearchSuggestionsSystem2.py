@@ -8,6 +8,13 @@ class TrieNode:
         self.products = list()
         self.n = 0
 
+    def print_trie(self, level=0, prefix=''):
+        # Indentation to represent the level in the Trie
+        indent = ' ' * (level * 2)
+        print(f"{indent}{prefix}: ({', '.join(self.products)})")
+        for c, child_node in self.children.items():
+            child_node.print_trie(level + 1, c)
+
 
 class Trie:
     def __init__(self):
@@ -40,6 +47,8 @@ class Solution:
         trie = Trie()
         for product in products:
             trie.add_product(product)
+        print("Print To Test Tree Construction:")
+        print(f"{trie.root.print_trie()}")
         return [trie.find_word_by_prefix(c) for c in searchWord]
 
 
@@ -62,6 +71,7 @@ if __name__ == '__main__':
     solution_2 = Solution()
     test_1 = solution_1.suggestedProducts(products_1, searchWord_1)
     test_2 = solution_2.suggestedProducts(products_2, searchWord_2)
+
 
     # Print Results
     print(f"\nTest 1 Output: {test_1} \nExpected Output: {expected_output_1}")
