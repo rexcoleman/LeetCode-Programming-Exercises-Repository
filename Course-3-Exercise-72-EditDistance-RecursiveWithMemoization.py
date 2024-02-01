@@ -1,28 +1,27 @@
 class Solution:
     def minDistance(self, w1: str, w2: str) -> int:
-        memo = {}
-        def dfs(n, m):
-            # Base Case if any one of w1 or w2 is empty
-            if n == 0 or m == 0:
-                return m or n
+        n, m = len(w1), len(w2)
 
-            if (n,m) in memo:
-                return memo[(n,m)]
+        dp = [[0] * (m+1) for i in range(n+1)]
 
-            elif w1[n - 1] == w2[m - 1]:
-                ans =  dfs(n - 1, m - 1)
+        for j in range(m+1): # Base Case 0th row where len(w1) = 0
+            dp[0][j] = j
 
-            else:
-                ans = 1 + min(
-                    dfs(n - 1, m - 1),  # Replace
-                    dfs(n - 1, m),  # Delete
-                    dfs(n, m - 1)  # Insert
-                )
+        for i in range(n+1):  # Base Case 0th column where len(w2) = 0
+            dp[i][0] = i
 
-            memo[(n,m)] = ans
-            return memo[(n,m)]
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if w1[i-1] == w2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = 1 + min(
+                        dp[i-1][j-1],  # Replace
+                        dp[i-1][j],  # Delete
+                        dp[i][j-1]  # Insert
+                    )
 
-        return dfs(len(w1), len(w2))
+        return dp[-1][-1]
 
 
 if __name__ == '__main__':
