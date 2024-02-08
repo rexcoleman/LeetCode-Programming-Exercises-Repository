@@ -15,6 +15,8 @@ class MovingAverage:
         hed = self.head
         tail = (self.head + 1) % self.size
         self.window_sum = self.window_sum - self.queue[tail] + val
+        self.head = (self.head + 1) % self.size
+        self.queue[self.head] = val
         window_sum = self.window_sum
 
         return self.window_sum / min(self.size, self.count)
