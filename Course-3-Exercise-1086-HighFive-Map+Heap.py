@@ -16,14 +16,9 @@ class Solution:
         for student_id, scores in mapping.items():
             avg_score = sum(scores) // len(scores)
             result.append([student_id, avg_score])
-
             result.sort(key=lambda x: x[0])
 
-
-
-
         return result
-
 
 
 if __name__ == '__main__':
