@@ -55,11 +55,13 @@ class Solution:
     def closestValue(self, root: Optional[TreeNode], target: float) -> int:
         closest = root.val
         while root:
-            # Update the closest value if the current node is closer to the target.
-            if abs(root.val - target) < abs(closest - target):
+            # Check if current node is closer to the target than the current closest value
+            # In case of a tie, prefer the lower value (root.val < closest)
+            if abs(root.val - target) < abs(closest - target) or (
+                    abs(root.val - target) == abs(closest - target) and root.val < closest):
                 closest = root.val
 
-            # Decide whether to go left or right in the tree.
+            # Move to the left if target is less than current node's value, otherwise move right
             root = root.left if target < root.val else root.right
 
         return closest
