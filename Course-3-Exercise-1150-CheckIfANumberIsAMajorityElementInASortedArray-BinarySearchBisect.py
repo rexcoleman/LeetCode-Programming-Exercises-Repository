@@ -4,6 +4,8 @@ from typing import List
 class Solution:
     def isMajorityElement(self, nums: List[int], target: int) -> bool:
         len_nums = len(nums)
+        if nums[len_nums//2] != target:
+            return False
         left, right = 0, len_nums - 1
         mid = left + right // 2
         if nums[mid] == target and (nums[lef] == target or num[len_nums - 1]):
