@@ -7,7 +7,7 @@ class Solution:
     def isMajorityElement(self, nums: List[int], target: int) -> bool:
 
         def search(values, x):
-            lo, high = 0, len(values)
+            lo, high = 0, len(values) - 1
             while lo < high:
                 mid = (lo + high) // 2
                 if values[mid] < x:
