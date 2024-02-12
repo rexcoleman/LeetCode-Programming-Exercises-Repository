@@ -4,6 +4,9 @@ from typing import List
 
 class Solution:
     def isMajorityElement(self, nums: List[int], target: int) -> bool:
+        len_nums = len(nums)
+        if nums[len_nums // 2] != target:
+            return False
         lo = bisect.bisect_left(nums, target)
         hi = bisect.bisect_right(nums, target)
         return (hi - lo) > len(nums) // 2
