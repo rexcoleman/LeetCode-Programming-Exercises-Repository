@@ -4,11 +4,14 @@ import math
 class Solution:
     def isArmstrong(self, n: int) -> bool:
         original, new = n, 0
-        k = math.floor(math.log10(n)) + 1
+        a = math.log10(n)
+        b = math.floor(a) + 1
+
+        # k = math.floor(math.log10(n)) + 1
 
         while n:
             n, d = divmod(n, 10)
-            new += d**k
+            new += d**b
 
         return new == original
 
