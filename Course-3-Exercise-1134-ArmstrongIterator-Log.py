@@ -1,12 +1,16 @@
-class Solution:
-    def isArmstrong(self, N: int) -> bool:
-        digits = []
-        n = N
-        while n:
-            n, digit = divmod(n, 10)
-            digits.append(digit)
+import math
 
-        return sum(map(lambda x: x**len(digits), digits)) == N
+
+class Solution:
+    def isArmstrong(self, n: int) -> bool:
+        original, new = n, 0
+        k = math.floor(math.log10(n)) + 1
+
+        while n:
+            n, d = divmod(n, 10)
+            new += d**k
+
+        return new == original
 
 
 if __name__ == '__main__':
