@@ -5,12 +5,7 @@ from typing import List
 class Solution:
     def groupStrings(self, strings: List[str]) -> List[List[str]]:
         def shift_letter(letter: str, shift: int):
-            a = ord(letter)
-            b = ord('a')
-            d = (ord(letter) - shift) % 26 + ord('a')
-            e = chr(d)
-            return e
-            # return chr((ord(letter) - shift) % 26 + ord('a'))
+            return chr((ord(letter) - shift) % 26 + ord('a'))
 
         # Create a hash value
         def get_hash(string: str):
