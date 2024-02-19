@@ -7,10 +7,6 @@ class Solution:
         val_map = defaultdict(int)
         sce = float('inf')
 
-        # for i in range(len(mat)):
-        #     for j in range(len(mat[i])):
-        #         val_map[mat[i][j]] += 1
-
         for row in mat:
             for num in row:
                 val_map[num] += 1
