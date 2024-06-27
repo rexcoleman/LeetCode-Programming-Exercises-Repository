@@ -8,13 +8,13 @@ Welcome to my LeetCode Programming Exercises repository! This repository collate
 **Description:** Animated examples for faster learning and deeper understanding.
 **Coding Exercises:** 106
 **Directory Naming Format:** `Exercise-97-BST-KthSmallestNode`
-**Link to Course:** [DSA for Cracking the Coding Interview](https://www.udemy.com/course/data-structures-algorithms-python/learn/lecture/27111034?start=0#overview)
+**Link to Course:** [DSA for Cracking the Coding Interview](https://www.udemy.com/course/data-structures-algorithms-python/)
 
 ### Course 2: Implementing Data Structures, Graph Algorithms, and Sorting Algorithms
 **Description:** A guide to implementing data structures, graph algorithms, and sorting algorithms from scratch with interview questions.
 **Coding Exercises:** 33
 **Directory Naming Format:** `Course-2-Exercise-33-RabinKarpImplementation`
-**Link to Course:** [Data Structures and Algorithms in Python](https://www.udemy.com/course/algorithms-and-data-structures-in-python/learn/lecture/17109458?start=0#overview)
+**Link to Course:** [Data Structures and Algorithms in Python](https://www.udemy.com/course/algorithms-and-data-structures-in-python/)
 
 ### Course 3: Leetcode Top Interview 150 + Leetcode Top Interview 75 + Leetcode Premium Algo 100
 **Description:** Comprehensive set of problems from Leetcode's top interview questions and premium algorithms.
