@@ -29,12 +29,6 @@ LeetCode exercises are a critical part of honing your problem-solving and coding
 - [Top Interview 75](https://leetcode.com/studyplan/leetcode-75/)
 - [Premium Algo 100](https://leetcode.com/studyplan/premium-algo-100/)
 
-### Course 4: Mathematical Thinking in Computer Science
-**Description:** Developing mathematical thinking skills applied to computer science.
-**Coding Exercises:** 11
-**Directory Naming Format:** `Course-4-Exercise-2-NQueens-Backtracking`
-**Link to Course:** [Mathematical Thinking in Computer Science](https://www.coursera.org/learn/what-is-a-proof?specialization=discrete-mathematics)
-
 ## How to Navigate the Repository
 Each course has its own directory, and each coding exercise is stored in a subdirectory named according to the specified format. This structure makes it easy to locate and review specific exercises.
 
