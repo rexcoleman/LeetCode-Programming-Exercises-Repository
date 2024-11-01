@@ -9,9 +9,8 @@ LeetCode exercises are a critical part of honing your problem-solving and coding
 ## Total Coding Exercises: 760+
 
 ### Course 1: DSA for Cracking the Coding Interview
-**Description:** Animated examples for faster learning and deeper understanding.
-
-**Coding Exercises:** 106
+-**Description:** Animated examples for faster learning and deeper understanding.
+-**Coding Exercises:** 106
 
 **Directory Naming Format:** `Exercise-97-BST-KthSmallestNode`
 
