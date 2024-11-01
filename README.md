@@ -9,10 +9,10 @@ LeetCode exercises are a critical part of honing your problem-solving and coding
 ## Total Coding Exercises: 760+
 
 ### Course 1: DSA for Cracking the Coding Interview
--**Description:** Animated examples for faster learning and deeper understanding.
--**Coding Exercises:** 106
 
-**Directory Naming Format:** `Exercise-97-BST-KthSmallestNode`
+**Description:** Animated examples for faster learning and deeper understanding.
+
+*# Coding Exercises Completed:** 106
 
 **Link to Course:** [DSA for Cracking the Coding Interview](https://www.udemy.com/course/data-structures-algorithms-python/)
 
@@ -20,16 +20,16 @@ LeetCode exercises are a critical part of honing your problem-solving and coding
 
 **Description:** A guide to implementing data structures, graph algorithms, and sorting algorithms from scratch with interview questions.
 
-**Coding Exercises:** 33
-
-**Directory Naming Format:** `Course-2-Exercise-33-RabinKarpImplementation`
+*# Coding Exercises Completed:** 33
 
 **Link to Course:** [Data Structures and Algorithms in Python](https://www.udemy.com/course/algorithms-and-data-structures-in-python/)
 
 ### Course 3: Leetcode Top Interview 150 + Leetcode Top Interview 75 + Leetcode Premium Algo 100
+
 **Description:** Comprehensive set of problems from Leetcode's top interview questions and premium algorithms.
-**Coding Exercises:** 580
-**Directory Naming Format:** `Course-3-Exercise-790-DominoAndTrominoTilingMathOptimizationFibonacciSequenceLike`
+
+**# Coding Exercises Completed:** 580
+
 **Links to Courses:**
 - [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
 - [Top Interview 75](https://leetcode.com/studyplan/leetcode-75/)
